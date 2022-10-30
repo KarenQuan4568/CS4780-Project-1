@@ -261,7 +261,7 @@ public class SDES {
 		ciphertext = xor(ciphertext, key2);
 		ciphertext = sbox(ciphertext);
 		ciphertext = p4(ciphertext);
-		ciphertext = xor2(getLeft(ip(plaintext)), ciphertext);
+		ciphertext = xor2(ciphertext, getRight(ip(plaintext)));
 		
 		for (int i = 0; i<4; i++) {
 			temp[i] = ciphertext[i];
